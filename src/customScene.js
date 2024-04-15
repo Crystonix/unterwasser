@@ -1,6 +1,6 @@
 //customScene.js
 
-import * as THREE from 'three';
+import * as THREE from './external/three';
 import { setupCamera } from './utils/setupCamera';
 import {setupEnvironment} from "./utils/setupEnvironment";
 import {setupTerrain} from "./utils/setupTerrain";

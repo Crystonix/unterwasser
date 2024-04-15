@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-import {OrbitControls}  from "three/addons";
+import * as THREE from '../external/three';
+import {OrbitControls}  from "../external/three/examples/jsm/controls/OrbitControls";
 
 function setupCamera(renderer) {
 

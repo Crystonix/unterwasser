@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from '../external/three';
 
 export function setupTerrain(scene){
     generateSandPlane(scene);
