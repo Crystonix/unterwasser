@@ -5,8 +5,6 @@ import { setupCamera } from './utils/setupCamera';
 import {setupEnvironment} from "./utils/setupEnvironment";
 import {setupTerrain} from "./utils/setupTerrain";
 import UnderwaterBubbles from './particles/UnderwaterBubbles';
-import {setupPlants} from "./utils/setupPlants";
-import UnderwaterPlant from "./objects/UnderwaterPlant";
 
 export default class CustomScene {
     constructor() {
@@ -22,7 +20,6 @@ export default class CustomScene {
 
         setupEnvironment(this.scene);
         setupTerrain(this.scene);
-        //this.underwaterPlant = new UnderwaterPlant(this.scene);
 
         this.underwaterBubbles = new UnderwaterBubbles(this.scene);
         this.clock = new THREE.Clock();

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import {loadShader} from "./loadShader";
 
 export function setupTerrain(scene){
     generateSandPlane(scene);
@@ -24,6 +23,4 @@ function generateSandPlane(scene) {
     plane_mesh.receiveShadow = true;
     plane_mesh.rotation.x = THREE.MathUtils.degToRad(-90);
     scene.add(plane_mesh);
-
-    let previousTime = 0;
 }

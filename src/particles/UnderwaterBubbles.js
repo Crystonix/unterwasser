@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 
-// Create a class for underwater bubbles
 class UnderwaterBubbles {
     constructor(scene, numberOfBubbles = 500) {
         this.scene = scene;
@@ -9,7 +8,6 @@ class UnderwaterBubbles {
         this.range = 3;
         this.bubbles = [];
 
-        // Initialize the underwater bubbles
         this.createBubbles();
     }
 
@@ -30,11 +28,10 @@ class UnderwaterBubbles {
     }
 
     animate(deltaTime) {
-        // Update the bubbles' positions or any other animations here
         this.bubbles.forEach(bubble => {
-            bubble.position.y += 0.005; // Example: Move bubbles upward
+            bubble.position.y += 0.005;
             if (bubble.position.y > this.range) {
-                bubble.position.y = -this.range; // Reset position if bubble goes above the water
+                bubble.position.y = -this.range;
             }
         });
     }

@@ -2,19 +2,18 @@ import * as THREE from 'three';
 import {OrbitControls}  from "three/addons";
 
 function setupCamera(renderer) {
-    // Create camera
+
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
     camera.position.set(0, 2, 0);
+
     const control_is_enabled = false;
     if (control_is_enabled){
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.target.set(0, 1, 0); // Set the target to the center of the scene
-        controls.update(); // Update controls to apply the target change
+
+        controls.target.set(0, 1, 0);
+        controls.update();
     }
-    // Enable OrbitControls for interactive camera movement
 
-
-    // Set up resizing logic
     window.addEventListener('resize', () => {
         handleResize();
     });
@@ -31,7 +30,6 @@ function setupCamera(renderer) {
     }
 
     function update() {
-        // Update any camera-related logic here
         controls.update();
     }
 
