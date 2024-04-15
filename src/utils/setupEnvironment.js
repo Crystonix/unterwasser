@@ -1,4 +1,4 @@
-import * as THREE from '../external/three';
+import * as THREE from '../external/three.js';
 
 function setupEnvironment(scene) {
     const ambientLight = new THREE.AmbientLight('blue', 0.5);

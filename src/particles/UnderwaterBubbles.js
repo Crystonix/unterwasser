@@ -1,4 +1,4 @@
-import * as THREE from '../external/three';
+import * as THREE from '../external/three.js';
 
 class UnderwaterBubbles {
     constructor(scene, numberOfBubbles = 500) {

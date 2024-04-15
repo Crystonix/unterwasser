@@ -1,5 +1,5 @@
-import * as THREE from '../external/three';
-import {OrbitControls}  from "../external/three/examples/jsm/controls/OrbitControls";
+import * as THREE from '../external/three.js';
+import {OrbitControls}  from "../external/three.js/examples/jsm/controls/OrbitControls";
 
 function setupCamera(renderer) {
 
