@@ -1,6 +1,12 @@
+//customScene.js
+
 import * as THREE from 'three';
-import { setupCamera } from './setupCamera';
-import {setupEnvironment} from "./setupEnvironment";
+import { setupCamera } from './utils/setupCamera';
+import {setupEnvironment} from "./utils/setupEnvironment";
+import {setupTerrain} from "./utils/setupTerrain";
+import UnderwaterBubbles from './particles/UnderwaterBubbles';
+import {setupPlants} from "./utils/setupPlants";
+import UnderwaterPlant from "./objects/UnderwaterPlant";
 
 export default class CustomScene {
     constructor() {
@@ -9,34 +15,27 @@ export default class CustomScene {
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(this.renderer.domElement);
-        this.renderer.setClearColor(0xffffff);
-        
+        this.renderer.setClearColor('MediumseaGreen');
+        this.renderer.shadowMap.enabled = true;
+
         this.camera = setupCamera(this.renderer);
 
+        setupEnvironment(this.scene);
+        setupTerrain(this.scene);
+        //this.underwaterPlant = new UnderwaterPlant(this.scene);
 
-        //setupEnvironment(this.scene);
+        this.underwaterBubbles = new UnderwaterBubbles(this.scene);
+        this.clock = new THREE.Clock();
 
-        this.objects = [];
         this.animate();
-
-    }
-
-    addObject(object) {
-        this.objects.push(object);
-        this.scene.add(object);
     }
 
     animate() {
-        requestAnimationFrame(() => this.animate());
+        const deltaTime = this.clock.getDelta();
+
+        this.underwaterBubbles.animate(deltaTime);
+        //this.underwaterPlant.update(deltaTime);
         this.renderer.render(this.scene, this.camera.getCamera());
+        requestAnimationFrame(() => this.animate());
     }
 }
-
-// Example usage:
-const scene = new CustomScene();
-
-// Add any objects you want to the scene
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.addObject(cube);
