@@ -6,7 +6,7 @@ export function setupTerrain(scene){
 }
 
 function generateSandPlane(scene) {
-    var plane_geometry = new THREE.PlaneGeometry(16, 16, 16, 16);
+    var plane_geometry = new THREE.PlaneGeometry(25, 25, 16, 16);
 
     const textureLoader = new THREE.TextureLoader();
     const sandTexture = textureLoader.load('src/assets/textures/clay/clay_plaster_diff_4k.jpg');
