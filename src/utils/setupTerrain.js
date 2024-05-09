@@ -7,9 +7,10 @@ export function setupTerrain(scene){
 function generateSandPlane(scene) {
     var plane_geometry = new THREE.PlaneGeometry(25, 25, 16, 16);
 
+    const baseUrl = 'https://crystonix.github.io/unterwasser/dist/';
     const textureLoader = new THREE.TextureLoader();
-    const sandTexture = textureLoader.load('https://crystonix.github.io/unterwasser/src/assets/textures/clay/clay_plaster_diff_4k.jpg');
-    const displacementMap = textureLoader.load('https://crystonix.github.io/unterwasser/src/assets/textures/clay/clay_plaster_disp_4k.jpg');
+    const sandTexture = textureLoader.load(baseUrl + 'src/assets/textures/clay/clay_plaster_diff_4k.jpg');
+    const displacementMap = textureLoader.load(baseUrl + 'src/assets/textures/clay/clay_plaster_disp_4k.jpg');
 
     var plane_material = new THREE.MeshStandardMaterial({
         map: sandTexture,
