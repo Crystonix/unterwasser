@@ -9,7 +9,7 @@ function generateSandPlane(scene) {
 
     const textureLoader = new THREE.TextureLoader();
     const sandTexture = textureLoader.load('src/assets/textures/clay/clay_plaster_diff_4k.jpg');
-    const displacementMap = textureLoader.load('src/assets/textures/clay/clay_plaster_disp_4k.png');
+    const displacementMap = textureLoader.load('src/assets/textures/clay/clay_plaster_disp_4k.jpg');
 
     var plane_material = new THREE.MeshStandardMaterial({
         map: sandTexture,
