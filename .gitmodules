@@ -1,3 +1,0 @@
-[submodule "src/external/three.js"]
-	path = src/external/three.js
-	url = https://github.com/mrdoob/three.js.git
